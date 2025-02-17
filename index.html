@@ -36,7 +36,7 @@
         }
         .collage-container {
             display: flex;
-            gap: 60px;
+            gap: 50px;
             flex-shrink: 0;
             padding: 20px;
             animation: moveCollage 50s linear infinite; /* Adjusted duration for continuous smooth scroll */
@@ -44,7 +44,7 @@
 
         .collage-container img {
             width: auto;
-            height: 22vh;
+            height: 21vh;
             object-fit: contain;
             transition: transform 0.6s ease-in-out;
         }
@@ -89,10 +89,10 @@
 
         /* Styling for text box */
         .text-box {
-            background: linear-gradient(to left, rgba(255, 255, 255, 0.5), rgba(255, 182, 193, 0.5), rgba(255, 255, 255, 0.5)); /* Transparent gradient */
+            background: linear-gradient(to left, rgb(255, 192, 203, 0.5), hsl(351, 100%, 86%, 0.5), hsl(195, 53%, 79%, 0.5));
             padding: 20px;
             border-radius: 15px;
-            font-size: 20px;
+            font-size: 25px;
             color: rgb(0, 0, 0);
             font-weight: bold;
             text-shadow: 0 0 15px rgb(207, 207, 207);
@@ -116,7 +116,8 @@
             padding: 20px;
             border-radius: 15px;
             font-size: 40px;
-            color: rgb(0, 0, 0);
+            color: (right, pink, lightpink, lightblue);
+
             font-weight: bold;
             text-shadow: 0 0 15px rgb(207, 207, 207);
             max-width: 80vw;
@@ -127,40 +128,52 @@
             z-index: 1;
             animation: glowText 1.5s infinite alternate;
         }
-
-        /* Timer box */
-        .timer {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: linear-gradient(to left, rgba(255, 182, 193, 0.3), rgba(255, 182, 193, 0.3), rgba(173, 216, 230, 0.3)); /* Transparent gradient */
-            padding: 20px 40px;
-            border-radius: 10px;
-            font-size: 30px; /* Increased font size */
-            color: black;
-            font-weight: bold;
-            text-shadow: 0 0 15px rgb(207, 207, 207);
-        }
     </style>
 </head>
 <body>
     <audio id="bg-music" loop>
-    <source src="music.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-</audio>
+        <source src="music.mp3" type="audio/mpeg">
+    </audio>
+    
+    <button id="play-music" onclick="playAudio()">Play Music</button>
+    
+    <style>
+        #play-music {
+            background: linear-gradient(to left, rgb(255, 192, 203, 0.5), hsl(351, 100%, 86%, 0.5), hsl(195, 53%, 79%, 0.5));
 
-<button id="play-music" onclick="playAudio()">Play Music</button>
+            border: none;
+            padding: 12px 24px;
+            font-size: 18px;
+            font-weight: bold;
+            color: black;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            text-shadow: 0 0 15px rgb(207, 207, 207);
+        }
+    
+        #play-music:hover {
+            background: linear-gradient(to right, rgb(255, 192, 203, 0.5), hsl(351, 100%, 86%, 0.5), hsl(195, 53%, 79%, 0.5));
 
-<script>
-    function playAudio() {
-        const audio = document.getElementById("bg-music");
-        audio.play().then(() => {
-            document.getElementById("play-music").style.display = "none"; 
-        }).catch(error => {
-            console.log("Playback failed:", error);
-        });
-    }
-</script>
+            transform: scale(1.05);
+        }
+    
+        #play-music:active {
+            transform: scale(0.95);
+        }
+    </style>
+    
+    <script>
+        function playAudio() {
+            const audio = document.getElementById("bg-music");
+            audio.muted = false;  // Unmute audio (in case browsers block it)
+            audio.play().then(() => {
+                document.getElementById("play-music").style.display = "none";
+            }).catch(error => console.log("Playback failed:", error));
+        }
+    </script>
+    
+
     <div class="container">
         <div class="collage-wrapper">
             
@@ -169,8 +182,6 @@
                 <img src="image (2).jpg" alt="">
                 <img src="image (3).jpg" alt="">
                 <img src="image (4).jpg" alt="">
-                <img src="image (48).jpg" alt="">
-                <img src="image (45).jpg" alt="">
                 <img src="image (5).jpg" alt="">
                 <img src="image (6).jpg" alt="">
                 <img src="image (7).jpg" alt="">
@@ -179,31 +190,23 @@
                 <img src="image (10).jpg" alt="">
                 <img src="image (11).jpg" alt="">
                 <img src="image (12).jpg" alt="">
+                <img src="image (13).jpg" alt="">
+                <img src="image (14).jpg" alt="">
+                <img src="image (15).jpg" alt="">
+                <img src="image (16).jpg" alt="">
+                <img src="image (17).jpg" alt="">
                 <!-- Duplicate images to create seamless loop -->
                 <img src="image (1).jpg" alt="">
                 <img src="image (2).jpg" alt="">
             </div>
             <div class="collage-container collage2">
-                <img src="image (13).jpg" alt="">
-                <img src="image (14).jpg" alt="">
-                <img src="image (45).jpg" alt="">
-                <img src="image (15).jpg" alt="">
-                <img src="image (16).jpg" alt="">
-                <img src="image (17).jpg" alt="">
                 <img src="image (18).jpg" alt="">
                 <img src="image (19).jpg" alt="">
-                <img src="image (48).jpg" alt="">
                 <img src="image (20).jpg" alt="">
                 <img src="image (21).jpg" alt="">
                 <img src="image (22).jpg" alt="">
                 <img src="image (23).jpg" alt="">
                 <img src="image (24).jpg" alt="">
-
-                <!-- Duplicate images to create seamless loop -->
-                <img src="image (13).jpg" alt="">
-                <img src="image (14).jpg" alt="">
-            </div>
-            <div class="collage-container collage3">
                 <img src="image (25).jpg" alt="">
                 <img src="image (26).jpg" alt="">
                 <img src="image (27).jpg" alt="">
@@ -217,10 +220,10 @@
                 <img src="image (35).jpg" alt="">
                 <img src="image (36).jpg" alt="">
                 <!-- Duplicate images to create seamless loop -->
-                <img src="image (25).jpg" alt="">
-                <img src="image (26).jpg" alt="">
+                <img src="image (18).jpg" alt="">
+                <img src="image (19).jpg" alt="">
             </div>
-            <div class="collage-container collage4">
+            <div class="collage-container collage3">
                 <img src="image (37).jpg" alt="">
                 <img src="image (38).jpg" alt="">
                 <img src="image (39).jpg" alt="">
@@ -233,9 +236,38 @@
                 <img src="image (46).jpg" alt="">
                 <img src="image (47).jpg" alt="">
                 <img src="image (48).jpg" alt="">
+                <img src="image (49).jpg" alt="">
+                <img src="image (50).jpg" alt="">
+                <img src="image (51).jpg" alt="">
+                <img src="image (52).jpg" alt="">
+                <img src="image (53).jpg" alt="">
+                <img src="image (54).jpg" alt="">
+                <img src="image (55).jpg" alt="">
                 <!-- Duplicate images to create seamless loop -->
                 <img src="image (37).jpg" alt="">
                 <img src="image (38).jpg" alt="">
+            </div>
+            <div class="collage-container collage4">
+                <img src="image (56).jpg" alt="">
+                <img src="image (57).jpg" alt="">
+                <img src="image (58).jpg" alt="">
+                <img src="image (59).jpg" alt="">
+                <img src="image (60).jpg" alt="">
+                <img src="image (61).jpg" alt="">
+                <img src="image (62).jpg" alt="">
+                <img src="image (63).jpg" alt="">
+                <img src="image (64).jpg" alt="">
+                <img src="image (65).jpg" alt="">
+                <img src="image (66).jpg" alt="">
+                <img src="image (67).jpg" alt="">
+                <img src="image (68).jpg" alt="">
+                <img src="image (69).jpg" alt="">
+                <img src="image (70).jpg" alt="">
+                <img src="image (71).jpg" alt="">
+                <img src="image (72).jpg" alt="">
+                <!-- Duplicate images to create seamless loop -->
+                <img src="image (56).jpg" alt="">
+                <img src="image (57).jpg" alt="">
             </div>
             
         </div>
@@ -258,31 +290,7 @@
         </div>
     </div>
 
-    <!-- Timer Display -->
-    <div class="timer" id="timer">
-        TOGETHER SINCE : 00d 00h 00m 00s
-    </div>
-
-    <script>
-        // Timer calculation
-        const startDate = new Date('2024-10-03T22:47:00'); // Starting date
-        const timerElement = document.getElementById('timer');
-        
-        function updateTimer() {
-            const now = new Date();
-            const diff = now - startDate; // Time difference in milliseconds
-
-            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-            // Update the timer display
-            timerElement.textContent = `TOGETHER SINCE : ${days}d ${hours}h ${minutes}m ${seconds}s`;
-        }
-
-        // Update the timer every second
-        setInterval(updateTimer, 1000);
+    
     </script>
 </body>
 </html>
