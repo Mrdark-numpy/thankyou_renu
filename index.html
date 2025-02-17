@@ -144,6 +144,19 @@
     </style>
 </head>
 <body>
+    <audio id="bg-music" loop>
+        <source src="music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const audio = document.getElementById("bg-music");
+            audio.play().catch(() => {
+                console.log("Autoplay blocked. User interaction required.");
+            });
+        });
+    </script>
     <div class="container">
         <div class="collage-wrapper">
             
@@ -223,12 +236,20 @@
             
         </div>
         <div class="text-box">
-            Hey, First of all thanks for always being by my side in this unkwon land and making me always feel like home<br>
-            I couldn't imagine being this happy without you, You are my one and only friend the the college and I can't thank you enough for that <br>
-            You and your mom really made me feel like I m in my home town with my famliy <br>
+            Hey, Renu and Amma, First of all thanks for always being by my side in this unkwon land and making me always feel like home<br>
+            I couldn't imagine being this happy without you, You guys are my one and only comfort people now and I can't thank you enough for that <br>
+            You and your mom really made me feel like I'm in my home town with my famliy and never made me feel like a outsider<br>
             This is just to let you kwon that I'll always be greatfull to you and your famliy for the same<br>
+            Now I can proudly say that I have a famliy in AndraPradesh and even though I'm away from my house but I have a home here <br>
+
+            హే, రెను మరియు అమ్మా, ఈ అన్ క్వాన్ భూమిలో ఎల్లప్పుడూ నా పక్షాన ఉన్నందుకు మరియు నాకు ఎప్పుడూ ఇంటిలా అనిపిస్తుంది <br>
+            మీరు లేకుండా ఈ సంతోషంగా ఉన్నారని నేను ఊహించే హించలేను,<br>
+            మీరు అబ్బాయిలు ఇప్పుడు నా ఏకైక మరియు ఓదార్పు వ్యక్తులు మరియు కోసం నేను మీకు తగినంత కృతజ్ఞతలు చెప్పలేను.<br>
+            మీరు మరియు మీ అమ్మ నిజంగా నా ప్రఖ్యాత పట్టణంలో నేను ఉన్నట్లు నాకు అనిపించింది మరియు నన్ను బయటి వ్యక్తిలా భావించలేదు అదే <br > 
+            కోసం నేను మీకు మరియు మీ కుటుంబ సభ్యులకు ఎల్లప్పుడూ గొప్పగా ఉంటాను.<br>
+            ఇప్పుడు నేను ఆండ్రాప్రదేశ్ లో ఒక కుటుంబం ఉందని గర్వంగా చెప్పగలను మరియు నేను నా ఇంటి నుండి దూరంగా ఉన్నప్పటికీ నాకు ఇక్కడ ఇల్లు ఉంది <br >
             <div class = "thanks">
-                THANK YOU 💖
+                THANK YOU 💖 / ధన్యవాదాలు AMMA & RENU 💖
             </div> 
         </div>
     </div>
