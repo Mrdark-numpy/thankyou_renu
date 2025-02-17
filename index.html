@@ -145,18 +145,22 @@
 </head>
 <body>
     <audio id="bg-music" loop>
-        <source src="music.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
-    
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const audio = document.getElementById("bg-music");
-            audio.play().catch(() => {
-                console.log("Autoplay blocked. User interaction required.");
-            });
+    <source src="music.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+
+<button id="play-music" onclick="playAudio()">Play Music</button>
+
+<script>
+    function playAudio() {
+        const audio = document.getElementById("bg-music");
+        audio.play().then(() => {
+            document.getElementById("play-music").style.display = "none"; 
+        }).catch(error => {
+            console.log("Playback failed:", error);
         });
-    </script>
+    }
+</script>
     <div class="container">
         <div class="collage-wrapper">
             
